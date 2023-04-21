@@ -1,0 +1,24 @@
+.heder {
+  /* height: 80px;
+  width: 1440px; */
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  background: #1C2B35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+.heder a {
+  text-decoration: none;
+  font-style: 17px;
+  margin-left: 35px;
+  color: #ffff;
+}
+
+.heder a:hover {
+  color: orange;
+}
