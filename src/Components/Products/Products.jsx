@@ -1,31 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import "./products.css"
-import Product from '../product/Product';
-import Asid from '../Asid/Asid';
-
+import Product from "../product/Product";
+import Asid from "../Asid/Asid";
 const Products = () => {
-  const handelar = (product) => {
-    console.log(product)
-  }
   const [products, setProducts] = useState([]);
+  const [card, setCard] = useState([])
   useEffect(() => {
     fetch("products.json")
       .then(res => res.json())
       .then(data => setProducts(data))
-  }, [])
-  return (
-    <div className='container'>
-      <div className="products-container">
-        {
-          products.map((product) => <Product key={product.id} product={product} handelar={handelar}>
+  }, []);
 
-          </Product>)
-        }
+  const handelAddToCard = (product) => {
+    const newCard = [...card, product];
+    setCard(newCard);
+  }
+
+  return (
+    <div>
+      <div className="container">
+        <div className="cards">
+          {products.map(product => <Product
+            key={products.id} product={product}
+            handelAddToCard={handelAddToCard}
+          >
+
+          </Product>)}
+        </div>
+        <div className="asid">
+
+          <Asid card={card} />
+        </div>
       </div>
-      <div className="card-container">
-        <Asid />
-      </div>
-    </div >
+    </div>
   );
 };
 

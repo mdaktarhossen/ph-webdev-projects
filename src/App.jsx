@@ -2,7 +2,7 @@ import Products from "./Components/Products/Products"
 import Heder from "./Components/Heder/Heder"
 const App = () => {
   return (
-    <div>
+    <div >
       <Heder />
       <Products />
     </div>
